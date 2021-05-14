@@ -1,20 +1,19 @@
 import styles from './Button.module.scss';
 import clsx from 'clsx'
 
-function Button({ label, redBg, margin }) { 
+function Button({ label, background, margin }) { 
 
   return (
     <button
       className={clsx(styles.button,
-        redBg && styles.redBg
+        background === "red" && styles.redBg,
+        background === "transparent" && styles.transparentBg,
       )}
       style={margin && {
         margin: `${margin} !important`
       }}
     >
-      <p className={clsx(styles.smallText,
-        redBg && styles.label
-      )}>{label}</p>
+      <p className={clsx(styles.smallText, styles.label)}>{label}</p>
     </button>
   );
 }

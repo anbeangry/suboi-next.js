@@ -1,24 +1,33 @@
 import Button from "@element/Button/Button";
 
 function HomePage() {
-  return <div>
-    <h3>Elements</h3>
+  return <div style={{
+    background: '#444',
+    minHeight: '100vh',
+    paddingTop: '100px'
+  }}> 
     <div style={{
       display: 'flex',
       width: '100%',
-      justifyContent: 'center'
-    }}>
+      justifyContent: 'center',
+    }}> 
       <Button
-        label="PLAY VIDEO"
+        label="Default"
         margin={'10px 10px 10px 10px'}
       />
       <br/>
       <Button
-        label="BUY VIDEO"
-        redBg
-        margin={'10px 10px 10px 10px'}
+        label="PLAY VIDEO"
+        margin={'10px 10px 10px 10px'} 
+        background="transparent"
       />
-    </div>
+      <br/>
+      <Button
+        label="BUY VIDEO"
+        margin={'10px 10px 10px 10px'}
+        background="red"
+      />
+    </div> 
   </div>
 }
 

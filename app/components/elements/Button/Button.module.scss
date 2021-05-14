@@ -6,10 +6,10 @@
   align-items: center;
   background-color: transparent;
   border-radius: 12px;
-  width: 155pt;
-  height: 24pt;
-  border: 1px $color-primary solid;
-  color: $color-primary;
+  width: 155px;
+  height: 24px;
+  border: 1px $color-white solid;
+  color: $color-white;
   cursor: pointer;
   transition: .3s;
 
@@ -18,8 +18,9 @@
   }
 
   &:hover {
-    background-color: $color-primary;
-    color: $color-white;
+    background-color: $color-white;
+    color: $color-black;
+    font-weight: 500;
   }
 
   &:active {
@@ -27,8 +28,27 @@
   }
 }
 
-.redBg {
+.redBg { 
   background-color: $color-primary;
-  color: $color-white;
-  font-weight: bold;
-}  
+  border: 1px $color-primary solid;
+  color: $color-white;   
+  font-weight: 500;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    font-weight: 500;
+  }
+}
+
+.transparentBg { 
+  background-color: transparent; 
+  border: 1px $color-primary solid;
+  color: $color-primary;   
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    font-weight: 500;
+  }
+}

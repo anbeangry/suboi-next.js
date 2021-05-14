@@ -1,0 +1,28 @@
+@import "styles/app.scss";
+
+.language {
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  color: $color-white;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+
+  & p {
+
+    &:nth-child(2) { 
+      margin: 0 3px; 
+    }
+  }
+
+  .languageText {
+    cursor: pointer;
+    transition: .3s;
+
+    &:active {
+      transform: scale(.95);
+    }
+  }
+}
