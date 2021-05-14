@@ -1,11 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto"); 
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat"); 
+
 $color-primary: #FF3434;
 $color-black: #050517;
 $color-white: #fff;
 
 // 15pt
 $font-base-size: 1.25rem !default;
-$font-primary: "Roboto";
-$font-secondary: "Montserrat";
+$font-primary: Roboto;
+$font-secondary: Montserrat;
 
 // Background opacity coverage
 $opacity-background: .15;

@@ -33,6 +33,7 @@ Handle the conflict:
 - Yarn as package manager by default
 - AirBnB esLint and styleLint for style guide
 - node-sass
+- clsx
 
 ## 3. Task, Bonus and Minus system
 After you read this readme.md, you'all agree my term about quality in work process.
