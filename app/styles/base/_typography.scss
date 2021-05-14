@@ -4,24 +4,24 @@ body {
   color: $color-white
 }
 
-// 12px
+// 12pt
 .smallText {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-family: $font-primary;
 }
 
-// 15px
+// 15pt
 .text {
   font-size: $font-base-size;
   font-family: $font-primary;
 }
-// 25px
+// 25pt
 .bigText {
-  font-size: 1.667rem;
+  font-size: 2.083rem;
   font-family: $font-primary;
 }
 
-//short text with triple dots "."
+// Short text with triple dots "."
 p {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -29,18 +29,24 @@ p {
 }
 
 // Title declaration
+// 100pt
 h1 {
   font-family: $font-secondary;
-  font-size: 6.667rem;
+  font-size: 8.3rem;
 }
-
+// 40pt
 h2 {
   font-family: $font-secondary;
-  font-size: 2.667rem;
+  font-size: 3.3rem;
 }
-
+// 25pt
 h3 {
   font-family: $font-secondary;
-  font-size: 1.333rem;
+  font-size: 2.08rem;
+}
+// 15pt
+h4 {
+  font-family: $font-secondary;
+  font-size: 1.25rem;
 }
 

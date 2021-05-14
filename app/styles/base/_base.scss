@@ -10,7 +10,9 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-*, *:after, *:before {
+*,
+*:after,
+*:before {
   box-sizing: inherit;
 } 
 
@@ -21,24 +23,22 @@ a {
 
 // Reset button styling
 button,
-input[type='button'] {
+input[type="button"] {
   outline: 0;
   -webkit-appearance: none;
   border-radius: 0;
   cursor: default;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='search'],
-input[type='number'],
-input[type='tel'],
-input[type='url'],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
 textarea {
-  @extend button;
-  // Set font size to 16px to avoid iOS zooming on focus
-  font-size: 16px;
+  @extend %button;
 }
 
 // Remove default fieldset styles
