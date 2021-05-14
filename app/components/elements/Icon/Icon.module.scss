@@ -1,0 +1,15 @@
+@import "styles/app.scss";
+
+.icon {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: transparent;
+  width: 25px;
+  height: 25px; 
+  transition: .3s;
+  
+  &:active {
+    transform: scale(.95);
+  }
+} 

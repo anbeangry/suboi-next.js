@@ -3,7 +3,7 @@ import styles from './Header.module.scss';
 function Header() {
   return (
     <header className={styles.header}>
-      <p className={styles.bigText}>This is header</p>
+      <h2>SUBOI</h2>
     </header>
   );
 }
