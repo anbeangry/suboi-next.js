@@ -4,6 +4,7 @@
     "baseUrl": "app",
     "paths": {
       "@element/*": ["components/elements/*"],
+      "@styles/*": ["components/styles/*"],
       "@layout/*": ["components/layouts/*"],
       "@module/*": ["components/modules/*"],
       "@template/*": ["components/templates/*"],

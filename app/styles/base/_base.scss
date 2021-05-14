@@ -1,3 +1,5 @@
+@import "../abstracts/variables";
+
 html { 
   box-sizing: border-box;
   font-size: 100%;
@@ -8,6 +10,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-family: $font-primary;
+  font-size: $font-base-size;
 }
 
 *,
@@ -21,8 +25,37 @@ a {
   text-decoration: none; 
 }
 
+// Short text with triple dots "."
+p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// Title declaration
+// 100pt
+h1 {
+  font-family: $font-secondary;
+  font-size: 8.3rem;
+}
+// 40pt
+h2 {
+  font-family: $font-secondary;
+  font-size: 3.3rem;
+}
+// 25pt
+h3 {
+  font-family: $font-secondary;
+  font-size: 2.08rem;
+}
+// 15pt
+h4 {
+  font-family: $font-secondary;
+  font-size: 1.25rem;
+}
+
 // Reset button styling
-button,
+%button,
 input[type="button"] {
   outline: 0;
   -webkit-appearance: none;

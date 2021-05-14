@@ -1,9 +1,3 @@
-body {
-  font-family: $font-primary;
-  font-size: $font-base-size; 
-  color: $color-white
-}
-
 // 12pt
 .smallText {
   font-size: 1rem;
@@ -20,33 +14,3 @@ body {
   font-size: 2.083rem;
   font-family: $font-primary;
 }
-
-// Short text with triple dots "."
-p {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-// Title declaration
-// 100pt
-h1 {
-  font-family: $font-secondary;
-  font-size: 8.3rem;
-}
-// 40pt
-h2 {
-  font-family: $font-secondary;
-  font-size: 3.3rem;
-}
-// 25pt
-h3 {
-  font-family: $font-secondary;
-  font-size: 2.08rem;
-}
-// 15pt
-h4 {
-  font-family: $font-secondary;
-  font-size: 1.25rem;
-}
-

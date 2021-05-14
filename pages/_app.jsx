@@ -1,7 +1,7 @@
-import 'styles/base/_base.scss'
+import '../app/styles/base/_base.scss';
 
 function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 }
 
-export default App
+export default App;
