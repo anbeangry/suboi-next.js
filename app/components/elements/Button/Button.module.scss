@@ -1,1 +1,34 @@
 @import "styles/app.scss";
+
+.button { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 12px;
+  width: 155pt;
+  height: 24pt;
+  border: 1px $color-primary solid;
+  color: $color-primary;
+  cursor: pointer;
+  transition: .3s;
+
+  .label {
+    height: max-content; 
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
+  &:active {
+    transform: scale(.95);
+  }
+}
+
+.redBg {
+  background-color: $color-primary;
+  color: $color-white;
+  font-weight: bold;
+}  
