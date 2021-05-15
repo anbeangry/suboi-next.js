@@ -1,9 +1,10 @@
-import HomePage from '@template/HomePage/HomePage'
-import Default from '@layout/Default/Default'
+import React from 'react';
+import Default from 'components/layouts/Default/Default';
+import HomePage from 'components/templates/HomePage/HomePage';
 
 function Home() {
   return (
-    <Default>
+    <Default >
       <HomePage />
     </Default>
   );

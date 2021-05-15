@@ -3,15 +3,15 @@
     "target": "es6",
     "baseUrl": "app",
     "paths": {
-      "@element/*": ["components/elements/*"],
-      "@styles/*": ["components/styles/*"],
-      "@layout/*": ["components/layouts/*"],
-      "@module/*": ["components/modules/*"],
-      "@template/*": ["components/templates/*"],
-      "@constant/*": ["constants/*"],
-      "@context/*": ["context/*"],
-      "@hook/*": ["hooks/*"],
-      "@util/*": ["utils/*"]
+      "components/elements/*": ["components/elements/*"],
+      "components/styles/*": ["components/styles/*"],
+      "components/layouts/*": ["components/layouts/*"],
+      "components/modules/*": ["components/modules/*"],
+      "components/templates/*": ["components/templates/*"],
+      "constant/*": ["constants/*"],
+      "context/*": ["context/*"],
+      "hook/*": ["hooks/*"],
+      "util/*": ["utils/*"]
     }
   }
 }
