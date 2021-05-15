@@ -1,7 +1,37 @@
+@import "styles/app.scss";
 
 .container {
-  height: 200vh;
-  background-image: url("https://i.imgur.com/aDmsIsU.png");
+  background-image: url("../../../../public/images/product_bg.png");
   background-position: top center;
-  background-size: cover;
+  background-size: cover;  
+  height: 200vh;
+  // overflow: hidden;
+
+  .products {
+    margin: 147px 0;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; 
+
+    @include shop-breakpoint("sm") {
+      margin-top: calc((100vh - 411px)/2);
+    }
+  }
 }
+
+// .scroll {
+//   overflow: scroll;
+
+//   & ::-webkit-scrollbar {
+//     display: block;
+//     width: 0;
+//     height: 0;
+//   }
+
+//   & ::-webkit-scrollbar-thumb {
+//     display: block;
+//     background: #fff;
+//   }
+// }
