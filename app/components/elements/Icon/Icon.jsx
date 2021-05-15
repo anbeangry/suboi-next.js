@@ -18,7 +18,7 @@ function Icon({ url, icon }) {
 
 Icon.propTypes = {
   url: PropTypes.string,
-  icon: PropTypes.string,
+  icon: PropTypes.object,
 };
 
 export default Icon;

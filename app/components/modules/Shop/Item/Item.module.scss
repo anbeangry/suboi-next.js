@@ -1,0 +1,51 @@
+@import "styles/app.scss";
+
+.product { 
+  height: 574px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 95px;
+
+  @include shop-breakpoint("lg") {
+    height: 411px; 
+  } 
+
+  h4 {
+    cursor: pointer;
+    transition: .3s;
+
+    @include shop-breakpoint("lg") {
+      font-size: 1rem; 
+    }
+
+    &:active {
+      transform: scale(.95);
+    }
+  }
+}
+
+.productInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.productImg {
+  cursor: pointer;
+  width: 500px;
+  height: 500px;
+
+  @include shop-breakpoint("lg") {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+.text {
+  @include shop-breakpoint("lg") {
+    font-size: 1rem; 
+  }
+}
