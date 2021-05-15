@@ -1,10 +1,24 @@
-import styles from './Icon.module.scss'
+import React from 'react';
+import PropTypes from 'prop-types';
+import clsx from 'clsx';
+import { useRouter } from 'next/router';
+import styles from './Icon.module.scss';
 
-function Icon({ url, icon }) { 
+function Icon({ url, icon }) {
+  const { pathname } = useRouter();
+
   return (
-    <a className={styles.icon} target="_blank" rel="noreferrer" href={url}>
+    <a className={clsx(styles.icon,
+      pathname === '/shop' && styles.iconDark)
+    } target="_blank" rel="noreferrer" href={url}>
       {icon}
     </a>
-  ) 
+  );
 }
+
+Icon.propTypes = {
+  url: PropTypes.string,
+  icon: PropTypes.string,
+};
+
 export default Icon;

@@ -1,7 +1,11 @@
-import Default from '@layout/Default/Default'
+import React from 'react';
+import Default from 'components/layouts/Default/Default';
+import ShopPage from 'components/templates/ShopPage/ShopPage';
 
 function Shop() {
-  return <Default>Shop page</Default>
+  return <Default>
+    <ShopPage />
+  </Default>;
 }
 
-export default Shop
+export default Shop;
