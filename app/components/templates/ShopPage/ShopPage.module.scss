@@ -3,9 +3,7 @@
 .container {
   background-image: url("../../../../public/images/product_bg.png");
   background-position: top center;
-  background-size: cover;  
-  height: 200vh;
-  // overflow: hidden;
+  background-size: cover;   
 
   .products {
     margin: 147px 0;
@@ -16,22 +14,7 @@
     justify-content: space-between; 
 
     @include shop-breakpoint("sm") {
-      margin-top: calc((100vh - 411px)/2);
+      margin-top: calc((100vh - 350px)/2); // 411px is product item's height
     }
   }
-}
-
-// .scroll {
-//   overflow: scroll;
-
-//   & ::-webkit-scrollbar {
-//     display: block;
-//     width: 0;
-//     height: 0;
-//   }
-
-//   & ::-webkit-scrollbar-thumb {
-//     display: block;
-//     background: #fff;
-//   }
-// }
+} 
