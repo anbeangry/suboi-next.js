@@ -4,13 +4,34 @@ import Cart from 'components/modules/Shop/Cart/Cart';
 import CartButton from 'components/modules/Shop/CartButton/CartButton';
 import styles from './ShopPage.module.scss';
 
+const items = [
+  {
+    id: '1',
+    name: 'SUBOI TOUR SHIRT',
+    price: 1,
+    image: 'https://i.ibb.co/XCQMY1W/hoodieblack.png',
+  },
+  {
+    id: '2',
+    name: 'SUBOI TOUR SHIRT',
+    price: 1,
+    image: 'https://i.ibb.co/XCQMY1W/hoodieblack.png',
+  },
+  {
+    id: '3',
+    name: 'SUBOI TOUR SHIRT',
+    price: 1,
+    image: 'https://i.ibb.co/XCQMY1W/hoodieblack.png',
+  },
+];
+
 function ShopPage() {
   const [openCart, setOpenCart] = useState(false);
   const [appearCart, setAppearCart] = useState(false);
 
   useEffect(() => {
     function onScroll() {
-      if (window.innerWidth <= 1024) {
+      if (window.innerWidth <= 1024 && window.innerWidth >= 414) {
         if (!openCart) {
           if (this.prev < window.pageYOffset) {
             setAppearCart(true);
@@ -42,22 +63,14 @@ function ShopPage() {
   };
 
   return <div className={styles.container}>
+    <div className={styles.background}/>
     <div className={styles.products}>
-      <Item
-        src="https://i.ibb.co/XCQMY1W/hoodieblack.png"
-        name="SUBOI TOUR SHIRT"
-        price={25}
-      />
-      <Item
-        src="https://i.ibb.co/XCQMY1W/hoodieblack.png"
-        name="SUBOI TOUR SHIRT"
-        price={25}
-      />
-      <Item
-        src="https://i.ibb.co/XCQMY1W/hoodieblack.png"
-        name="SUBOI TOUR SHIRT"
-        price={25}
-      />
+      { items && items.map((item) => <Item
+          key={item.id}
+          src="https://i.ibb.co/XCQMY1W/hoodieblack.png"
+          name="SUBOI TOUR SHIRT"
+          price={25}
+        />)}
       <CartButton
         openCart={openCart}
         appearCart={appearCart}

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './CartButton.module.scss';
 
 function CartButton({ onClick, appearCart, openCart }) {
+  // console.log(appearCart)
   return (
     <div
       className={clsx(
