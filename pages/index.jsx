@@ -1,6 +1,6 @@
 import React from 'react';
-import Default from 'components/layouts/Default/Default';
-import HomePage from 'components/templates/HomePage/HomePage';
+import Default from 'layouts/Default/Default';
+import HomePage from 'templates/Home/Home';
 
 function Home() {
   return (
