@@ -1,8 +1,11 @@
 import React from 'react';
-import Default from 'components/layouts/Default/Default';
+import Default from 'layouts/Default/Default';
+import ShopListing from 'templates/ShopListing/ShopListing';
 
-function ShopItem() {
-  return <Default>Item page</Default>;
+function Shop() {
+  return <Default>
+    <ShopListing />
+  </Default>;
 }
 
-export default ShopItem;
+export default Shop;

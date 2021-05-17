@@ -1,17 +1,18 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "baseUrl": "app",
+    "baseUrl": ".",
     "paths": {
-      "components/elements/*": ["components/elements/*"],
-      "components/styles/*": ["components/styles/*"],
-      "components/layouts/*": ["components/layouts/*"],
-      "components/modules/*": ["components/modules/*"],
-      "components/templates/*": ["components/templates/*"],
-      "constant/*": ["constants/*"],
-      "context/*": ["context/*"],
-      "hook/*": ["hooks/*"],
-      "util/*": ["utils/*"]
+      "elements/*": ["app/components/elements/*"],
+      "layouts/*": ["app/components/layouts/*"],
+      "modules/*": ["app/components/modules/*"],
+      "templates/*": ["app/components/templates/*"],
+      "constant/*": ["app/constants/*"],
+      "context/*": ["app/context/*"],
+      "hook/*": ["app/hooks/*"],
+      "util/*": ["app/utils/*"],
+      "public/*": ["public/*"],
+      "styles/*": ["app/styles/*"],
     }
   }
 }

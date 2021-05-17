@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Item from 'components/modules/Shop/Item/Item';
-import Cart from 'components/modules/Shop/Cart/Cart';
-import CartButton from 'components/modules/Shop/CartButton/CartButton';
-import styles from './ShopPage.module.scss';
+import { useRouter } from 'next/router';
+import Cart from 'modules/Shop/Cart/Cart';
+import Items from 'modules/Shop/Items/Items';
+import ItemDetail from 'modules/Shop/ItemDetail/ItemDetail';
+import CartButton from 'modules/Shop/CartButton/CartButton';
+import styles from './ShopListing.module.scss';
 
 const items = [
   {
@@ -25,7 +27,8 @@ const items = [
   },
 ];
 
-function ShopPage() {
+function ShopListing() {
+  const { pathname } = useRouter();
   const [openCart, setOpenCart] = useState(false);
   const [appearCart, setAppearCart] = useState(false);
 
@@ -64,24 +67,23 @@ function ShopPage() {
 
   return <div className={styles.container}>
     <div className={styles.background}/>
-    <div className={styles.products}>
-      { items && items.map((item) => <Item
-          key={item.id}
-          src="https://i.ibb.co/XCQMY1W/hoodieblack.png"
-          name="SUBOI TOUR SHIRT"
-          price={25}
-        />)}
+    <div className={styles.items}>
+      {pathname === '/shop'
+        ? <Items
+            data={items}
+        />
+        : <ItemDetail/>}
       <CartButton
         openCart={openCart}
         appearCart={appearCart}
         onClick={handleOnClose}
       />
+      <Cart
+        openCart={openCart}
+        onClick={handleOnClose}
+      />
     </div>
-    <Cart
-      openCart={openCart}
-      onClick={handleOnClose}
-    />
   </div>;
 }
 
-export default ShopPage;
+export default ShopListing;

@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import LanguageSelection from 'components/elements/LanguageSelection/LanguageSelection';
-import Header from 'components/modules/Header/Header';
-import Icon from 'components/elements/Icon/Icon';
-import Facebook from '../../../../public/icons/fb.svg';
-import Instagram from '../../../../public/icons/ig.svg';
-import Youtube from '../../../../public/icons/youtube.svg';
-import Spotify from '../../../../public/icons/spotify.svg';
-import AppleMusic from '../../../../public/icons/apple-music.svg';
+import LanguageSelection from 'elements/LanguageSelection/LanguageSelection';
+import Header from 'modules/Header/Header';
+import Icon from 'elements/Icon/Icon';
+import AppleMusic from 'public/icons/apple-music.svg';
+import Facebook from 'public/icons/fb.svg';
+import Instagram from 'public/icons/ig.svg';
+import Youtube from 'public/icons/youtube.svg';
+import Spotify from 'public/icons/spotify.svg';
 import styles from './Default.module.scss';
 
 function Default({ children }) {

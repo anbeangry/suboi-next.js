@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from 'components/elements/Button/Button';
+import Button from 'elements/Button/Button';
 
 function HomePage() {
   return <div style={{

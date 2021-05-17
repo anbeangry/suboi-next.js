@@ -18,9 +18,17 @@
     "settings": {
         "import/resolver": {
             "node": {
-                "paths": ["app"],
+                "paths": ["app/components"],
                 "extensions": [".js", ".jsx"]
             }
         }
+    },
+    "rules": {
+        "import/no-unresolved": [
+            "error",
+            {
+                "ignore": [ ".svg" ]
+            }
+        ]
     }
 }  
