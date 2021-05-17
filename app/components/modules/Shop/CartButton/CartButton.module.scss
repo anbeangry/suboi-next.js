@@ -22,9 +22,12 @@
     bottom: -50px
   }
 
-  @include shop-breakpoint("sm") {
-    display: block;
-    width: 100%;
+  @include shop-breakpoint("sm") { 
+    position: relative;
+    width: calc(100% - 40px); 
+    margin: 0 20px;
+    height: 40px;
+    bottom: 0; 
   }
 
   &:hover {
@@ -47,6 +50,17 @@
 
   @include shop-breakpoint("lg") {
     bottom: 425px;
+  }
+
+  @include shop-breakpoint("sm") {
+    position: fixed; 
+    bottom: 425px; 
+    width: 155px; 
+    height: 24px;  
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;  
   }
 }
 
