@@ -7,7 +7,7 @@ function LanguageSelection() {
   const { pathname } = useRouter();
   return (
     <div className={clsx(styles.language,
-      pathname === '/shop' && styles.languageDark)
+      (pathname === '/' || pathname === '/music') && styles.languageWhite)
     }>
       <h4 className={styles.languageText}>VN</h4>
       <p>/</p>

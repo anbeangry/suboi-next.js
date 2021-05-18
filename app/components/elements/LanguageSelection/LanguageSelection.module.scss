@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center; 
-  color: $color-white;
+  color: $color-black;
   position: fixed;
   bottom: 20px;
   left: 20px;
@@ -27,6 +27,6 @@
   }
 }
 
-.languageDark { 
-  color: $color-black;  
+.languageWhite { 
+  color: $color-white;  
 }

@@ -9,7 +9,7 @@ function Icon({ url, icon }) {
 
   return (
     <a className={clsx(styles.icon,
-      pathname === '/shop' && styles.iconDark)
+      (pathname === '/' || pathname === '/music') && styles.iconWhite)
     } target="_blank" rel="noreferrer" href={url}>
       {icon}
     </a>

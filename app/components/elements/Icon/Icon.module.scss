@@ -12,11 +12,15 @@
   &:active {
     transform: scale(.95);
   }
-} 
-
-.iconDark {
 
   & path {
     fill: $color-black;
+  }
+} 
+
+.iconWhite {
+
+  & path {
+    fill: $color-white;
   }
 }
