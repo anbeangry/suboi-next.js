@@ -4,14 +4,20 @@ import { useRouter } from 'next/router';
 import styles from './LanguageSelection.module.scss';
 
 function LanguageSelection() {
-  const { pathname } = useRouter();
+  const { pathname, ...router } = useRouter();
   return (
     <div className={clsx(styles.language,
       (pathname === '/' || pathname === '/[id]') && styles.languageWhite)
     }>
-      <h4 className={styles.languageText}>VN</h4>
+      <h4
+        className={styles.languageText}
+        onClick={() => router.push(pathname, pathname, { locale: 'vi_VN' })}
+      >VN</h4>
       <p>/</p>
-      <h4 className={styles.languageText}>EN</h4>
+      <h4
+        className={styles.languageText}
+        onClick={() => router.push(pathname, pathname, { locale: 'en_US' })}
+      >EN</h4>
     </div>
   );
 }
