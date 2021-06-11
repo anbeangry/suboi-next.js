@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Default from 'layouts/Default/Default';
-import ShopListing from 'templates/ShopListing/ShopListing';
 import { groq } from 'next-sanity';
 import { getClient, urlFor } from 'utils/sanity';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Default from 'layouts/Default/Default';
+import ShopListing from 'templates/ShopListing/ShopListing';
 
 const query = groq`
   {
@@ -52,9 +53,13 @@ export async function getStaticProps({ preview = false }) {
 }
 
 function Shop({ data }) {
+  const { locale } = useRouter();
+  const title = locale === 'en_US'
+    ? 'Checkout the latest merchandise from Suboi shop'
+    : 'Suboi Shop';
   return <Default social={data.contact.social}>
     <Head>
-      <meta property="og:title" content="Checkout the latest merchandise from Suboi shop"/>
+      <meta property="og:title" content={title}/>
       <meta property="og:image" content={urlFor(data.background?.shopBackground?.asset?._ref)}/>
     </Head>
     <ShopListing items={data.products} categories={data.categories} background={data.background}/>

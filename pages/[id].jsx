@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Head from 'next/head';
+import { groq } from 'next-sanity';
+import { useRouter } from 'next/router';
+import { getClient, urlFor } from 'utils/sanity';
 import Default from 'layouts/Default/Default';
 import MusicDetail from 'templates/MusicDetail/MusicDetail';
-import { groq } from 'next-sanity';
-import { getClient, urlFor } from 'utils/sanity';
-import Head from 'next/head';
 
 const query = groq`
   {
@@ -63,7 +64,10 @@ export async function getStaticPaths({ preview = false }) {
 }
 
 function Music({ data }) {
-  const title = `Checkout ${data.song?.name?.toUpperCase()} at Suboi official website`;
+  const { locale } = useRouter();
+  const title = locale === 'en_US'
+    ? `Checkout ${data.song?.name?.toUpperCase()} at Suboi official website`
+    : `${data.song?.name?.toUpperCase()} đã có trên website chính thức của Suboi`;
   return <Default social={data.contact.social}>
     <Head>
       <meta property="og:title" content={title}/>
