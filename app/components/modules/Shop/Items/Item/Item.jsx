@@ -17,7 +17,7 @@ function Item({
 
   return <div className={styles.item} onClick={handleOnClick}>
     <div className={styles.itemImg}>
-      <Image src={image} layout="fill" priority={true}/>
+      <Image src={image} layout="fill"/>
     </div>
     <div className={styles.itemInfo}>
       <h4>{name}</h4>
@@ -28,7 +28,7 @@ function Item({
 
 Item.propTypes = {
   name: PropTypes.string,
-  image: PropTypes.object,
+  image: PropTypes.string,
   price: PropTypes.number,
   id: PropTypes.string,
 };
