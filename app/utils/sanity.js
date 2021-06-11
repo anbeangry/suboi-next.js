@@ -52,5 +52,13 @@ export const previewClient = createClient({
   token: process.env.SANITY_API_TOKEN,
 });
 
+// Plain text serialization
+export const toPlainText = (blocks = []) => blocks.map((block) => {
+  if (block._type !== 'block' || !block.children) {
+    return '';
+  }
+  return block.children.map((child) => child.text).join('');
+}).join('\n\n');
+
 // Helper function for easily switching between normal client and preview client
 export const getClient = (usePreview) => (usePreview ? previewClient : sanityClient);

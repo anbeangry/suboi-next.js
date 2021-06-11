@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Head from 'next/head';
+import { groq } from 'next-sanity';
+import { useRouter } from 'next/router';
+import { getClient, toPlainText } from 'utils/sanity';
 import HomeLayout from 'layouts/HomeLayout/HomeLayout';
 import HomePage from 'templates/Home/Home';
-import { groq } from 'next-sanity';
-import { getClient } from 'utils/sanity';
 
 const query = groq`
   {
@@ -83,8 +85,16 @@ export async function getStaticProps({ preview = false }) {
 }
 
 function Home({ data }) {
+  const { locale } = useRouter();
+  const title = locale === 'en_US'
+    ? 'SUBOI | Official Music Website'
+    : 'SUBOI | Trang Official Music';
   return (
     <HomeLayout social={data.contact.social}>
+      <Head>
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={toPlainText(data.about?.biography?.lang?.[locale])}/>
+      </Head>
       <HomePage
         background={data.background}
         tour={{

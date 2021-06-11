@@ -1,10 +1,11 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import Default from 'layouts/Default/Default';
-import ShopDetail from 'templates/ShopDetail/ShopDetail';
+import Head from 'next/head';
 import { groq } from 'next-sanity';
 import { getClient, urlFor } from 'utils/sanity';
-import Head from 'next/head';
+import Default from 'layouts/Default/Default';
+import ShopDetail from 'templates/ShopDetail/ShopDetail';
 
 const query = groq`
   {
@@ -70,7 +71,10 @@ export async function getStaticPaths({ preview = false }) {
 }
 
 function Shop({ data }) {
-  const title = `Checkout ${data.product?.name.toUpperCase()} merchandise at Suboi Shop`;
+  const { locale } = useRouter();
+  const title = locale === 'en_US'
+    ? `Checkout ${data.product?.name.toUpperCase()} merchandise at Suboi Shop`
+    : `Sản phẩm ${data.product?.name.toUpperCase()} | Suboi Shop`;
   return <Default social={data.contact.social}>
     <Head>
       <meta property="og:title" content={title}/>
