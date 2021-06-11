@@ -7,7 +7,7 @@ import styles from './Background.module.scss';
 function Background({ url, className }) {
   return (
     <div className={clsx(styles.background, className)}>
-      <Image src={url} layout='fill'/>
+      <Image src={url} layout='fill' priority={true}/>
     </div>
   );
 }
