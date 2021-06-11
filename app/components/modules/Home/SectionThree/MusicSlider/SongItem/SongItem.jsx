@@ -17,7 +17,7 @@ function SongItem({ item, center }) {
   return (
     <div className={styles.songCardBox} onClick={handleOnClick}>
       <div className={styles.img}>
-        <Image src={urlFor(item?.coverImage).url()} layout="fill" className={styles.nextImg}/>
+        <Image src={urlFor(item?.coverImage).url()} layout="fill" className={styles.nextImg} priority={true}/>
       </div>
       <div className={styles.songInfo}>
         <div className={styles.songInfoLeft}>
