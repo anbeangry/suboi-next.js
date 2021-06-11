@@ -163,6 +163,7 @@
     margin: 0 40px; 
 
     .songCardBox { 
+      padding: 0;
       max-width: 420px;
       width: 220px;
       height: 220px; 
@@ -174,7 +175,7 @@
       .img {
         min-width: 220px;
         max-height: 220px;
-        height: 220px;
+        min-height: 220px;
         border-radius: 5px;
         transition: .3s;
         cursor: pointer;
@@ -234,6 +235,7 @@
   .songCardSmaller {
     min-width: 120px;  
     max-width: 120px;
+    padding: 0;
 
     .songCardBox { 
       width: 100%;
@@ -246,6 +248,7 @@
         height: 120px; 
         min-width: 120px;  
         max-width: 120px;
+        min-height: 120px;
       }
     }
   }
@@ -265,6 +268,7 @@
         min-width: 65px;  
         max-width: 65px;  
         height: 65px; 
+        min-height: 65px;
       }
     }
   }
