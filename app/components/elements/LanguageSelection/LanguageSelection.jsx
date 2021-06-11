@@ -11,12 +11,12 @@ function LanguageSelection() {
     }>
       <h4
         className={styles.languageText}
-        onClick={() => router.push(pathname, pathname, { locale: 'vi_VN' })}
+        onClick={() => router.push(pathname, router.query, { locale: 'vi_VN' })}
       >VN</h4>
       <p>/</p>
       <h4
         className={styles.languageText}
-        onClick={() => router.push(pathname, pathname, { locale: 'en_US' })}
+        onClick={() => router.push(pathname, router.query, { locale: 'en_US' })}
       >EN</h4>
     </div>
   );

@@ -56,13 +56,17 @@ export async function getStaticProps({ preview = false, params }) {
   };
 }
 
-export async function getStaticPaths({ preview = false }) {
+export async function getStaticPaths({ preview = false, locales }) {
   const data = await getClient(preview).fetch(query, { slug: '' });
-
-  const paths = data.products.map((item) => (
-    {
-      params: { id: String(item.slug.current) },
-    }
+  const paths = [];
+  data.products.map((item) => (
+    locales.map((item2) => (
+      paths.push(
+        {
+          params: { id: String(item.slug.current) }, locale: item2,
+        },
+      )
+    ))
   ));
   return {
     paths,
