@@ -10,7 +10,7 @@ function SongItem({ item }) {
       <div className={styles.img}>
         <Image
           src={urlFor(item?.image).url()}
-          priority={true} layout="fill"
+          layout="fill"
           className={styles.nextImg}
         />
       </div>
