@@ -6,8 +6,9 @@ import SectionOne from 'modules/Home/SectionOne/SectionOne';
 import SectionTwo from 'modules/Home/SectionTwo/SectionTwo';
 import SectionThree from 'modules/Home/SectionThree/SectionThree';
 import SectionFour from 'modules/Home/SectionFour/SectionFour';
-import SectionFive from 'modules/Home/SectionFive/SectionFive';
 import SectionSix from 'modules/Home/SectionSix/SectionSix';
+import SectionFive from 'modules/Home/SectionFive/SectionFive';
+import SectionSeven from 'modules/Home/SectionSeven/SectionSeven';
 import Header from 'modules/Header/Header';
 import { urlFor } from 'utils/sanity';
 import styles from './Home.module.scss';
@@ -82,13 +83,19 @@ function HomePage({
             </div>
             <div className="section">
               <SectionFive
+                height={height}
+                background={urlFor(background.tourBackground).url()}
+              />
+            </div>
+            <div className="section">
+              <SectionSix
                 background={urlFor(background.photoBackground).url()}
                 photos={photos}
                 height={height}
               />
             </div>
             <div className="section">
-              <SectionSix
+              <SectionSeven
                 background={urlFor(background.contactBackground).url()}
                 contact={contact}
                 height={height}

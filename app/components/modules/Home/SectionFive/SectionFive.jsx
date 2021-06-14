@@ -1,27 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Background from 'elements/Background/Background';
-import PhotoSlider from './PhotoSlider/PhotoSlider';
+import Image from 'next/image';
+import Button from 'elements/Button/Button';
 import styles from './SectionFive.module.scss';
 
-function SectionFive({ background, photos, height }) {
+function SectionFive({ height, background }) {
   return (
     <div
       className={styles.container}
       style={{ height: `${height}px` }}
     >
-      <Background
-        url={background}
-        className={styles.background}
-      />
-      <PhotoSlider photos={photos}/>
+      <div className={styles.videos}>
+        {
+          Array.from(Array(10)).map((item) => <div
+            key={item}
+            className={styles.videoItem}
+          >
+            <div className={styles.videoImg}>
+              <Image
+                src={background}
+                className={styles.nextImg}
+                layout='fill'
+                priority={true}
+              />
+            </div>
+            <div className={styles.action}>
+              <div className={styles.smallText}>Doi Khi – Suboi feat. Rapper</div>
+              <Button
+                label="PLAY VIDEO"
+                className={styles.button}
+              />
+            </div>
+          </div>)
+        }
+      </div>
     </div>
   );
 }
 
 SectionFive.propTypes = {
   background: PropTypes.string,
-  photos: PropTypes.array,
   height: PropTypes.number,
 };
 
