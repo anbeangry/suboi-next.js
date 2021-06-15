@@ -1,9 +1,25 @@
 @import "styles/app.scss";
 
-@include home-breakpoint("xs") {
+@include music-breakpoint("xxs") {
 
   .container {
     width: 100%;
+  }
+
+  .iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .iframeOpen {
+    opacity: 1;
+    visibility: visible;
   }
 
   .videos {
@@ -11,6 +27,7 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 
     .videoItem {
       width: 50%;
@@ -76,10 +93,85 @@
         visibility: visible;
       }
     }
+
+    .icon {
+      right: 0;
+      width: 100%;
+      height: 40px;
+      z-index: 9;
+
+      .red {
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .white {
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    .viewAll {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 42px;
+      margin: auto;
+      position: absolute;
+      top: 0; 
+      left: 0; 
+      bottom: 20px; 
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      color: #FFF;
+      cursor: pointer;
+
+      .viewAllTop {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 31px;
+        padding-right: 20px;
+
+        h4 {
+          text-transform: uppercase;
+          margin-right: 35px;
+          transition: .3s;
+          color: #FF3434;
+          transform: translateX(-10px);
+          font-size: .75rem;
+        }
+      }
+
+      .viewAllBottom {
+        display: flex;
+        align-items: center;
+        background-color: black;
+        color: #FF3434;
+        padding-left: 20px;
+        transition: .3s; 
+        height: 11px;
+
+        p {
+          font-size: 9px;
+          text-transform: uppercase;
+          margin-right: 21px;
+          min-width: 75px;
+        }
+      }
+    }
   }
 }
 
-@include home-breakpoint("md") {
+@include music-breakpoint("md") {
 
   .videos {
 
@@ -106,6 +198,115 @@
       .action {
         opacity: 1;
         visibility: visible;
+      }
+    }
+    
+    .icon {
+      opacity: 1;
+      right: 0;
+      position: absolute;
+
+      .red {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        right: 20px;
+        top: 5px;
+      }
+
+      .white {
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .icon:hover {
+      width: 100%;
+      height: 40px;
+      z-index: 9;
+
+      .red {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .white {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      + .viewAllBox { 
+        
+        h4 {
+          opacity: 1;
+          visibility: visible;  
+          transform: translateX(0);
+        } 
+
+        .viewAllBottom {
+          opacity: 1;
+          visibility: visible;
+          height: 11px;
+        }
+      }
+    }
+
+    .viewAll {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 42px;
+      margin: auto;
+      position: absolute;
+      top: 0; 
+      left: 0; 
+      bottom: 20px; 
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      color: #FFF;
+      cursor: pointer;
+
+      .viewAllTop {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 31px;
+        padding-right: 20px;
+
+        h4 {
+          text-transform: uppercase;
+          margin-right: 35px;
+          opacity: 0;
+          visibility: hidden;
+          transition: .3s;
+          color: #FF3434;
+          transform: translateX(-10px);
+          font-size: .983rem;
+        }
+      }
+
+      .viewAllBottom {
+        display: flex;
+        align-items: center;
+        background-color: black;
+        color: #FF3434;
+        padding-left: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s;
+        height: 0;
+
+        p {
+          font-size: 9px;
+          text-transform: uppercase;
+          margin-right: 21px;
+          min-width: 75px;
+        }
       }
     }
   }
