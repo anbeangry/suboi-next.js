@@ -21,6 +21,7 @@ function HomePage({
   photos,
   tour,
   contact,
+  videos,
 }) {
   const anchors = ['home', 'about', 'music', 'tour', 'photos', 'footer'];
   const [height, setHeight] = useState(0);
@@ -84,7 +85,7 @@ function HomePage({
             <div className="section">
               <SectionFive
                 height={height}
-                background={urlFor(background.tourBackground).url()}
+                videos={videos}
               />
             </div>
             <div className="section">
@@ -116,6 +117,7 @@ HomePage.propTypes = {
   photos: PropTypes.array,
   tour: PropTypes.object,
   contact: PropTypes.object,
+  videos: PropTypes.array,
 };
 
 export default HomePage;

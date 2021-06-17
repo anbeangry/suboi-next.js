@@ -1,27 +1,24 @@
 import React, { useState, useRef } from 'react';
-import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
-import ReactPlayer from 'react-player/youtube';
+// import ReactPlayer from 'react-player/youtube';
 import Button from 'elements/Button/Button';
 import ArrowRight from 'public/icons/arrow-right.svg';
+import { urlFor } from 'utils/sanity';
 import ArrowRightRed from 'public/icons/arrow-right-red.svg';
-import screenfull from 'screenfull';
 import styles from './SectionFive.module.scss';
 
-function SectionFive({ height, background }) {
+function SectionFive({ height, videos }) {
   const router = useRouter();
   const playerRef = useRef();
   const [isOpenVideo, setIsOpenVideo] = useState(false);
 
   const handleOnClick = () => {
-    // eslint-disable-next-line react/no-find-dom-node
-    screenfull.request(findDOMNode(playerRef.current));
     if (isOpenVideo) {
+      playerRef.current.focus();
       setIsOpenVideo(false);
-      // player.pauseVideo();
     } else {
       setIsOpenVideo(true);
     }
@@ -33,29 +30,28 @@ function SectionFive({ height, background }) {
       style={{ height: `${height}px` }}
     >
       <div className={clsx(styles.iframe, isOpenVideo && styles.iframeOpen)}>
-        <ReactPlayer
+        {/* <ReactPlayer
           controls
-              width='100%'
-              height='100%'
+          playing={isOpenVideo}
+          width='50%'
+          height='50%'
           url="https://www.youtube.com/embed/CZJvBfoHDk0"
-          ref={playerRef}/>
+          ref={playerRef}
+        /> */}
       </div>
       <div className={styles.videos}>
-        {
-          Array.from(Array(10)).map((item) => <div
-            key={item}
-            className={styles.videoItem}
-          >
+        {videos?.map((item, index) => <div key={index} className={styles.videoItem}>
+            <div className={styles.overlay}></div>
             <div className={styles.videoImg}>
               <Image
-                src={background}
+                src={urlFor(item.thumbnail).url()}
                 className={styles.nextImg}
                 layout='fill'
                 priority={true}
               />
             </div>
             <div className={styles.action}>
-              <div className={styles.smallText}>Doi Khi – Suboi feat. Rapper</div>
+              <div className={styles.smallText}>{item.title}</div>
               <Button
                 label="PLAY VIDEO"
                 className={styles.button}
@@ -86,6 +82,7 @@ function SectionFive({ height, background }) {
 SectionFive.propTypes = {
   background: PropTypes.string,
   height: PropTypes.number,
+  videos: PropTypes.array,
 };
 
 export default SectionFive;
