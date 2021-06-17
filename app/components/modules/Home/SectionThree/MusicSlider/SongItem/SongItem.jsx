@@ -24,7 +24,7 @@ function SongItem({ item, center }) {
           <h4>{item?.name}</h4>
           <p className={styles.smallText}>{item?.album.name} – Suboi</p>
         </div>
-        <h className={styles.bigText}>{new Date(item?.album?.releaseDate).getFullYear()}</h>
+        <h3 className={styles.bigText}>{new Date(item?.album?.releaseDate).getFullYear()}</h3>
       </div>
     </div>
   );
