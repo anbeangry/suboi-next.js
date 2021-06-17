@@ -26,6 +26,11 @@ const query = groq`
         lang
       }
     },
+    "videos": * [_type == 'video'][0..3] | order(releaseDate desc) {
+      title, 
+      thumbnail,
+      youtubeEmbedLink,
+    },
     "songs": * [_type == 'song'] {
       name,
       coverImage,
@@ -106,6 +111,7 @@ function Home({ data }) {
         songs={data.songs}
         photos={data.photos}
         contact={data.contact}
+        videos={data.videos}
       />
     </HomeLayout>
   );
