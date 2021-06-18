@@ -51,7 +51,7 @@
         .smallText {
           color: #FFF;
           position: absolute;
-          bottom: 27px;
+          bottom: 57px;
           width: 100%;
           text-align: center;
           opacity: 0;
@@ -203,6 +203,7 @@
           opacity: 1;
           visibility: visible;
           cursor: pointer;
+          font-size: .938rem;
         }
       }
     }
@@ -300,7 +301,7 @@
           transition: .3s;
           color: #FF3434;
           transform: translateX(-10px);
-          font-size: .983rem;
+          font-size: .938rem;
         }
       }
 
