@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import ReactPlayer from 'react-player/youtube';
 import { isMobile } from 'react-device-detect';
