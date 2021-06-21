@@ -23,7 +23,7 @@ function HomePage({
   contact,
   videos,
 }) {
-  const anchors = ['home', 'about', 'music', 'tour', 'photos', 'footer'];
+  const anchors = ['home', 'about', 'music', 'tour', 'videos', 'photos', 'footer'];
   const [height, setHeight] = useState(0);
   const router = useRouter();
 
