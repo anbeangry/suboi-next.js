@@ -6,8 +6,9 @@ import SectionOne from 'modules/Home/SectionOne/SectionOne';
 import SectionTwo from 'modules/Home/SectionTwo/SectionTwo';
 import SectionThree from 'modules/Home/SectionThree/SectionThree';
 import SectionFour from 'modules/Home/SectionFour/SectionFour';
-import SectionFive from 'modules/Home/SectionFive/SectionFive';
 import SectionSix from 'modules/Home/SectionSix/SectionSix';
+import SectionFive from 'modules/Home/SectionFive/SectionFive';
+import SectionSeven from 'modules/Home/SectionSeven/SectionSeven';
 import Header from 'modules/Header/Header';
 import { urlFor } from 'utils/sanity';
 import styles from './Home.module.scss';
@@ -20,8 +21,9 @@ function HomePage({
   photos,
   tour,
   contact,
+  videos,
 }) {
-  const anchors = ['home', 'about', 'music', 'tour', 'photos', 'footer'];
+  const anchors = ['home', 'about', 'music', 'tour', 'videos', 'photos', 'footer'];
   const [height, setHeight] = useState(0);
   const router = useRouter();
 
@@ -82,13 +84,19 @@ function HomePage({
             </div>
             <div className="section">
               <SectionFive
+                height={height}
+                videos={videos}
+              />
+            </div>
+            <div className="section">
+              <SectionSix
                 background={urlFor(background.photoBackground).url()}
                 photos={photos}
                 height={height}
               />
             </div>
             <div className="section">
-              <SectionSix
+              <SectionSeven
                 background={urlFor(background.contactBackground).url()}
                 contact={contact}
                 height={height}
@@ -109,6 +117,7 @@ HomePage.propTypes = {
   photos: PropTypes.array,
   tour: PropTypes.object,
   contact: PropTypes.object,
+  videos: PropTypes.array,
 };
 
 export default HomePage;

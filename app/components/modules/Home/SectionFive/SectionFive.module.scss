@@ -1,17 +1,321 @@
 @import "styles/app.scss";
 
-.container { 
-  display: flex; 
-  flex-direction: column;
-  width: 100%;
-  align-items: center; 
-  justify-content: center;  
-  position: relative; 
-  background-color: black;
-   
-  .background {
-    opacity: .15;
-    height: 100%;
-    position: absolute;
+@include music-breakpoint("xxs") {
+
+  .container {
+    width: 100%;
   }
-} 
+
+  .videos {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    .videoItem {
+      width: 50%;
+      height: 50%;
+      position: relative;
+
+      .iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 999999;
+      }
+
+      .action {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transition: .3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px 0 12px;
+        z-index: 99999;
+
+        .smallText {
+          color: #FFF;
+          position: absolute;
+          bottom: 57px;
+          width: 100%;
+          text-align: center;
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        .button {
+          width: 97px; 
+          height: 24px;
+          padding: 4px 0 0 3px;
+          font-size: .75rem;
+          z-index: 9999;
+        }
+      }
+
+      .videoImg {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .nextImg {
+          transition: .3s;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+        }
+      }
+
+      .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: .3s;
+        background-color: rgba($color: #000000, $alpha: .6);
+        z-index: 9999;
+        -webkit-backdrop-filter: grayscale(100%);
+        backdrop-filter: grayscale(100%);
+      }
+    }
+
+    .videoItem:hover {
+
+      .smallText {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .overlay {
+        background-color: rgba($color: #000000, $alpha: .4);
+        -webkit-backdrop-filter: grayscale(0%);
+        backdrop-filter: grayscale(0%);
+      }
+    }
+
+    .icon {
+
+      .red {
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .white {
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    .viewAll {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 42px;
+      margin: auto;
+      position: absolute;
+      top: 0; 
+      left: 0; 
+      bottom: 20px; 
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      color: #FFF;
+      cursor: pointer;
+      z-index: 99999;
+
+      .viewAllTop {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 31px;
+        padding-right: 20px;
+
+        h4 {
+          text-transform: uppercase;
+          margin-right: 35px;
+          transition: .3s;
+          color: #FF3434;
+          transform: translateX(-10px);
+          font-size: .75rem;
+        }
+      }
+
+      .viewAllBottom {
+        display: flex;
+        align-items: center;
+        background-color: black;
+        color: #FF3434;
+        padding-left: 20px;
+        transition: .3s; 
+        height: 11px;
+
+        p {
+          font-size: 9px;
+          text-transform: uppercase;
+          margin-right: 21px;
+          min-width: 75px;
+        }
+      }
+    }
+  }
+}
+
+@include music-breakpoint("md") {
+
+  .videos {
+
+    .videoItem {
+
+      .action {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        justify-content: space-between;
+
+        .smallText {
+          width: max-content;
+          position: relative;
+          bottom: 0;
+          opacity: 1;
+          visibility: visible;
+          cursor: pointer;
+          font-size: .938rem;
+        }
+      }
+    }
+
+    .videoItem:hover {
+
+      .action {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    
+    .icon {
+      opacity: 1;
+      right: 0;
+      position: absolute;
+
+      .red {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        right: 20px;
+        top: 5px;
+      }
+
+      .white {
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .icon:hover {
+      width: 100%;
+      height: 40px;
+      z-index: 9;
+
+      .red {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .white {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      + .viewAllBox { 
+        
+        h4 {
+          opacity: 1;
+          visibility: visible;  
+          transform: translateX(0);
+        } 
+
+        .viewAllBottom {
+          opacity: 1;
+          visibility: visible;
+          height: 11px;
+        }
+      }
+    }
+
+    .viewAll {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 42px;
+      margin: auto;
+      position: absolute;
+      top: 0; 
+      left: 0; 
+      bottom: 20px; 
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      color: #FFF;
+      cursor: pointer;
+
+      .viewAllTop {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 31px;
+        padding-right: 20px;
+
+        h4 {
+          text-transform: uppercase;
+          margin-right: 35px;
+          opacity: 0;
+          visibility: hidden;
+          transition: .3s;
+          color: #FF3434;
+          transform: translateX(-10px);
+          font-size: .938rem;
+        }
+      }
+
+      .viewAllBottom {
+        display: flex;
+        align-items: center;
+        background-color: black;
+        color: #FF3434;
+        padding-left: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s;
+        height: 0;
+
+        p {
+          font-size: 9px;
+          text-transform: uppercase;
+          margin-right: 21px;
+          min-width: 75px;
+        }
+      }
+    }
+  }
+}

@@ -25,8 +25,9 @@ function SectionOne({ background, promote, height }) {
         <h1 className={styles.title}>
           {promote?.albumAndSong?.name}
         </h1>
+
         {promote?.albumAndSong && (
-          <span className={styles.subtitle}>SUBOI</span>
+          <span className={styles.subtitle}></span>
         )}
 
         <div className={styles.buttons}>
@@ -34,7 +35,7 @@ function SectionOne({ background, promote, height }) {
             <Button
               className={styles.button}
               background="transparent"
-              label="PLAY VIDEO"
+              label="PRE-ORDER"
               href={promote?.ctaLink?.playVideo}
             />
           )}
@@ -42,7 +43,7 @@ function SectionOne({ background, promote, height }) {
             <Button
               className={styles.button}
               background="red"
-              label="BUY ALBUM"
+              label="PRE-SAVE"
               href={promote?.ctaLink?.buyAlbum}
             />
           )}
