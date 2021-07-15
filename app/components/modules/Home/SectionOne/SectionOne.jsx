@@ -35,7 +35,7 @@ function SectionOne({ background, promote, height }) {
             <Button
               className={styles.button}
               background="transparent"
-              label="PRE-ORDER"
+              label="PLAY VIDEO"
               href={promote?.ctaLink?.playVideo}
             />
           )}
@@ -43,7 +43,7 @@ function SectionOne({ background, promote, height }) {
             <Button
               className={styles.button}
               background="red"
-              label="PRE-SAVE"
+              label="PLAY ALBUM"
               href={promote?.ctaLink?.buyAlbum}
             />
           )}
